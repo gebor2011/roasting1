@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прожарка от Михалыча — AI-аудит смарт-контрактов и сетевых проектов</title>
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --primary: #ff5722;
+            --primary-glow: rgba(255, 87, 34, 0.4);
+            --text-muted: #8d95a5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+            padding-bottom: 60px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 15px;
+            text-align: center;
+        }
+
+        /* Универсальный стиль для всех баннеров */
+        .banner-block {
+            width: 100%;
+            margin: 25px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .banner-block img {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        /* Группа кнопок под финальным баннером */
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin: 35px 0 50px 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 36px;
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            width: 100%;
+            max-width: 450px;
+            color: #fff;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-tg {
+            background: linear-gradient(135deg, #ff5722 0%, #ff9800 100%);
+            box-shadow: 0 6px 20px var(--primary-glow);
+        }
+
+        .btn-tg:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 87, 34, 0.6);
+        }
+
+        .btn-vk {
+            background: #2787f5;
+            box-shadow: 0 6px 20px rgba(39, 135, 245, 0.3);
+        }
+
+        .btn-vk:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(39, 135, 245, 0.5);
+        }
+
+        /* Подвал */
+        footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .btn { font-size: 18px; padding: 15px 25px; }
+            .banner-block { margin: 15px auto; border-radius: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        
+        <!-- Баннер 1: Твоя репутация стоит дороже любых реферальных -->
+        <div class="banner-block">
+            <img src="banner1.jpg" alt="Твоя репутация стоит дороже любых реферальных">
+        </div>
+
+        <!-- Баннер 2: Главный баннер с описанием и ценой $7 -->
+        <div class="banner-block">
+            <img src="banner2.png" alt="Прожарка от Михалыча — Цена полной прожарки $7">
+        </div>
+
+        <!-- Баннер 3: Лучше один раз прожарить, чем платить за чужие легенды -->
+        <div class="banner-block">
+            <img src="banner3.jpg" alt="Лучше один раз прожарить, чем платить за чужие легенды">
+        </div>
+
+        <!-- Баннер 4: Финальный баннер с Михалычем (Вся правда без цензуры) -->
+        <div class="banner-block">
+            <img src="banner4.jpg" alt="Прожарка от Михалыча — Вся правда о проектах без цензуры">
+        </div>
+
+        <!-- Кнопки социальных сетей ТГ и ВК строго под финальным баннером -->
+        <div class="cta-group">
+            <a href="https://t.me" target="_blank" class="btn btn-tg">
+                Перейти в Telegram
+            </a>
+            <a href="https://vk.com" target="_blank" class="btn btn-vk">
+                Перейти во ВКонтакте
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Прожарка от Михалыча. Все права защищены. Твоя репутация дороже любой рефералки!</p>
+        </div>
+    </footer>
+
+</body>
+</html>
