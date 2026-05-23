@@ -3,134 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Прожарка от Михалыча — AI-аудит смарт-контрактов и сетевых проектов</title>
+    <title>Прожарка от Михалыча — AI-аудит смарт-контрактов</title>
     <style>
-        :root {
-            --bg-color: #0b0c10;
-            --primary: #ff5722;
-            --primary-glow: rgba(255, 87, 34, 0.4);
-            --text-muted: #8d95a5;
-        }
-
-        * {
-            box-sizing: border-box;
+        /* Общие стили в стиле крипто / темная тема */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0e11;
+            color: #eaecef;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            overflow-x: hidden;
-            padding-bottom: 60px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 15px;
-            text-align: center;
-        }
-
-        /* Универсальный стиль для всех баннеров */
-        .banner-block {
-            width: 100%;
-            margin: 25px auto;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-        }
-
-        .banner-block img {
-            width: 100%;
-            display: block;
-            height: auto;
-        }
-
-        /* Группа кнопок под финальным баннером */
-        .cta-group {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 35px 0 50px 0;
         }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 18px 36px;
-            font-size: 22px;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            cursor: pointer;
+        .container {
             width: 100%;
-            max-width: 450px;
-            color: #fff;
-            border: none;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            background: linear-gradient(135deg, #ff5722 0%, #ff9800 100%);
-            box-shadow: 0 6px 20px var(--primary-glow);
+            max-width: 800px;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 87, 34, 0.6);
+        /* Стили для баннеров */
+        .banner-container {
+            width: 100%;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .banner-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Текстовые блоки-карточки */
+        .text-block {
+            background: linear-gradient(145deg, #141a23, #1e2633);
+            border-left: 5px solid #00c853;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .text-block h2 {
+            color: #00c853;
+            margin-top: 0;
+            font-size: 24px;
+            line-height: 1.3;
+        }
+
+        .text-block p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #b7bdc6;
+        }
+
+        .text-block h3 {
+            color: #ffffff;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        /* Списки преимуществ */
+        .feature-list, .steps-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .feature-list li, .steps-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* Иконки списков */
+        .feature-list li::before {
+            content: "✕";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #ff3333;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .text-block .feature-list li:nth-child(n) {
+            color: #eaecef;
+        }
+        
+        .feature-list li strong {
+            color: #00c853;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+        }
+
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: #00c853;
+            color: #0b0e11;
+            border-radius: 50%;
+            text-align: center;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 20px;
+        }
+
+        /* Кнопка действия */
+        .btn-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn-submit {
+            background-color: #00c853;
+            color: #0b0e11;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4);
+        }
+
+        .btn-submit:hover {
+            background-color: #00e676;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 200, 83, 0.6);
         }
 
         /* Подвал */
         footer {
-            margin-top: 40px;
-            padding: 20px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.02);
-            font-size: 14px;
-            color: var(--text-muted);
             text-align: center;
+            padding: 30px 0;
+            font-size: 13px;
+            color: #707a8a;
+            border-top: 1px solid #1f2630;
             width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            .btn { font-size: 18px; padding: 15px 25px; }
-            .banner-block { margin: 15px auto; border-radius: 8px; }
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-    <main class="container">
-        
-        <!-- Баннер 1 -->
-        <div class="banner-block">
-            <img src="banner1.jpg" alt="Твоя репутация стоит дороже любых реферальных">
+    <div class="container">
+
+        <!-- ТЕКСТ НАД 1 БАННЕРОМ -->
+        <div class="text-block">
+            <h2>Почему твои $7 сегодня спасут тысячи долларов завтра?</h2>
+            <p>В мире крипты и сетевых проектов доверять на слово — самый быстрый способ обнулиться. «Прожарка от Михалыча» создана для тех, кто хочет знать правду до того, как нажмет кнопку «Инвестировать».</p>
+            
+            <h3>Кому необходима Прожарка:</h3>
+            <ul class="feature-list">
+                <li><strong>Инвесторам:</strong> Чтобы защитить свой капитал от скрытых багов и внезапных скамов.</li>
+                <li><strong>Блогерам и рефоводам:</strong> Твоя репутация стоит дороже любых реферальных. Не зови людей в проекты, которые завтра закроются.</li>
+                <li><strong>Новичкам в крипте:</strong> Если ты не умеешь сам читать код смарт-контрактов — Михалыч сделает это за тебя.</li>
+            </ul>
         </div>
 
-        <!-- Баннер 2 -->
-        <div class="banner-block">
-            <img src="banner2.png" alt="Прожарка от Михалыча — Цена полной прожарки $7">
+        <!-- БАННЕР 1 -->
+        <div class="banner-container">
+            <img src="banner1.jpg" alt="Прожарка от Михалыча - Баннер 1">
         </div>
 
-                <!-- Баннер 4 -->
-        <div class="banner-block">
-            <img src="banner4.jpg" alt="Прожарка от Михалыча — Вся правда о проектах без цензуры">
+        <!-- БАННЕР 2 -->
+        <div class="banner-container">
+            <img src="banner2.jpg" alt="Прожарка от Михалыча - Баннер 2">
         </div>
 
-        <!-- Только одна чистая кнопка Telegram без лишних пустых блоков -->
-        <div class="cta-group">
-            <a href="https://t.me/airoastingMichalych_bot" target="_blank" class="btn">
-                Подать заявку на прожарку
-            </a>
+        <!-- ТЕКСТ МЕЖДУ 2 И 3 БАННЕРОМ -->
+        <div class="text-block" style="border-left-color: #f0b90b;">
+            <h2 style="color: #f0b90b;">Что конкретно входит в полный аудит:</h2>
+            <ul class="feature-list" style="list-style: none;">
+                <li style="padding-left: 0; margin-bottom: 15px;">
+                    <strong style="color: #f0b90b;">Автоматический ИИ-анализ смарт-контракта:</strong> Ищем скрытые уязвимости, бэкдоры и функции заморозки твоих средств.
+                </li>
+                <li style="padding-left: 0; margin-bottom: 15px;">
+                    <strong style="color: #f0b90b;">Разбор токеномики:</strong> Проверяем кошельки создателей, распределение монет и скрытые комиссии на покупку или продажу.
+                </li>
+                <li style="padding-left: 0; margin-bottom: 15px;">
+                    <strong style="color: #f0b90b;">Проверка на признаки СКАМа:</strong> Выявляем классические уловок хайп-проектов и финансовых пирамид на ранней стадии.
+                </li>
+                <li style="padding-left: 0; margin-bottom: 15px;">
+                    <strong style="color: #f0b90b;">Понятный вердикт:</strong> Ты получаешь честный финальный отчет без сложной терминологии — заходить в проект или бежать от него.
+                </li>
+            </ul>
         </div>
 
-    </main>
+        <!-- БАННЕР 3 -->
+        <div class="banner-container">
+            <img src="banner3.jpg" alt="Прожарка от Михалыча - Баннер 3">
+        </div>
 
+        <!-- ТЕКСТ ПОД 3 БАННЕРОМ И ВЫШЕ КНОПКИ -->
+        <div class="text-block">
+            <h2>Всего 4 простых шага до чистой правды:</h2>
+            <ol class="steps-list">
+                <li><strong>Подай заявку:</strong> Нажми на кнопку ниже и отправь ссылку на проект или адрес смарт-контракта.</li>
+                <li><strong>Оплати услугу:</strong> Переведи $7 любым удобным способом.</li>
+                <li><strong>Запусти анализ:</strong> Михалыч мгновенно отправляет нейросеть на глубокое сканирование кода.</li>
+                <li><strong>Забери отчет:</strong> Получи всю правду без цензуры в течение нескольких минут.</li>
+            </ol>
+        </div>
+
+        <!-- КНОПКА ПОДАТЬ ЗАЯВКУ -->
+        <div class="btn-container">
+            <a href="#" class="btn-submit">Подать заявку на прожарку</a>
+        </div>
+
+    </div>
+
+    <!-- ПОДВАЛ -->
     <footer>
-        <div class="container">
-            <p>© 2026 Прожарка от Михалыча. Все права защищены. Твоя репутация дороже любой рефералки!</p>
-        </div>
+        <p>© 2026 Прожарка от Михалыча. Все права защищены. Твоя репутация дороже любой рефералки!</p>
     </footer>
 
 </body>
