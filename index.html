@@ -67,41 +67,58 @@
             font-size: 18px;
         }
 
-        /* Списки преимуществ */
-        .feature-list, .steps-list {
+        /* Исправленные списки без красных крестиков */
+        .feature-list {
             list-style: none;
             padding: 0;
             margin: 15px 0 0 0;
         }
 
-        .feature-list li, .steps-list li {
+        .feature-list li {
             position: relative;
-            padding-left: 30px;
+            padding-left: 25px;
             margin-bottom: 15px;
             font-size: 15px;
             line-height: 1.5;
+            color: #eaecef;
         }
 
-        /* Иконки списков */
-        .feature-list li::before {
-            content: "✕";
+        /* Стилизованные маркеры вместо крестиков */
+        .green-bullet li::before {
+            content: "•";
             position: absolute;
             left: 0;
-            top: 2px;
-            color: #ff3333;
-            font-weight: bold;
-            font-size: 16px;
+            top: -2px;
+            color: #00c853;
+            font-size: 24px;
         }
 
-        .text-block .feature-list li:nth-child(n) {
-            color: #eaecef;
+        .yellow-bullet li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: -2px;
+            color: #f0b90b;
+            font-size: 24px;
         }
         
         .feature-list li strong {
-            color: #00c853;
+            color: #ffffff;
+        }
+
+        /* Нумерованный список шагов */
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
         }
 
         .steps-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            font-size: 15px;
+            line-height: 1.5;
             counter-increment: step-counter;
         }
 
@@ -170,10 +187,10 @@
             <p>В мире крипты и сетевых проектов доверять на слово — самый быстрый способ обнулиться. «Прожарка от Михалыча» создана для тех, кто хочет знать правду до того, как нажмет кнопку «Инвестировать».</p>
             
             <h3>Кому необходима Прожарка:</h3>
-            <ul class="feature-list">
-                <li><strong>Инвесторам:</strong> Чтобы защитить свой капитал от скрытых багов и внезапных скамов.</li>
-                <li><strong>Блогерам и рефоводам:</strong> Твоя репутация стоит дороже любых реферальных. Не зови людей в проекты, которые завтра закроются.</li>
-                <li><strong>Новичкам в крипте:</strong> Если ты не умеешь сам читать код смарт-контрактов — Михалыч сделает это за тебя.</li>
+            <ul class="feature-list green-bullet">
+                <li><strong style="color: #00c853;">Инвесторам:</strong> Чтобы защитить свой капитал от скрытых багов и внезапных скамов.</li>
+                <li><strong style="color: #00c853;">Блогерам и рефоводам:</strong> Твоя репутация стоит дороже любых реферальных. Не зови людей в проекты, которые завтра закроются.</li>
+                <li><strong style="color: #00c853;">Новичкам в крипте:</strong> Если ты не умеешь сам читать код смарт-контрактов — Михалыч сделает это за тебя.</li>
             </ul>
         </div>
 
@@ -182,33 +199,33 @@
             <img src="banner1.jpg" alt="Прожарка от Михалыча - Баннер 1">
         </div>
 
-        <!-- БАННЕР 2 -->
+        <!-- БАННЕР 2 (Путь исправлен на .png) -->
         <div class="banner-container">
-            <img src="banner2.jpg" alt="Прожарка от Михалыча - Баннер 2">
+            <img src="Banner2.png" alt="Прожарка от Михалыча - Баннер 2">
         </div>
 
         <!-- ТЕКСТ МЕЖДУ 2 И 3 БАННЕРОМ -->
         <div class="text-block" style="border-left-color: #f0b90b;">
             <h2 style="color: #f0b90b;">Что конкретно входит в полный аудит:</h2>
-            <ul class="feature-list" style="list-style: none;">
-                <li style="padding-left: 0; margin-bottom: 15px;">
+            <ul class="feature-list yellow-bullet">
+                <li>
                     <strong style="color: #f0b90b;">Автоматический ИИ-анализ смарт-контракта:</strong> Ищем скрытые уязвимости, бэкдоры и функции заморозки твоих средств.
                 </li>
-                <li style="padding-left: 0; margin-bottom: 15px;">
+                <li>
                     <strong style="color: #f0b90b;">Разбор токеномики:</strong> Проверяем кошельки создателей, распределение монет и скрытые комиссии на покупку или продажу.
                 </li>
-                <li style="padding-left: 0; margin-bottom: 15px;">
-                    <strong style="color: #f0b90b;">Проверка на признаки СКАМа:</strong> Выявляем классические уловок хайп-проектов и финансовых пирамид на ранней стадии.
+                <li>
+                    <strong style="color: #f0b90b;">Проверка на признаки СКАМа:</strong> Выявляем классические уловки хайп-проектов и финансовых пирамид на ранней стадии.
                 </li>
-                <li style="padding-left: 0; margin-bottom: 15px;">
+                <li>
                     <strong style="color: #f0b90b;">Понятный вердикт:</strong> Ты получаешь честный финальный отчет без сложной терминологии — заходить в проект или бежать от него.
                 </li>
             </ul>
         </div>
 
-        <!-- БАННЕР 3 -->
+        <!-- БАННЕР 3 (Путь исправлен на .png) -->
         <div class="banner-container">
-            <img src="banner3.jpg" alt="Прожарка от Михалыча - Баннер 3">
+            <img src="Banner3.png" alt="Прожарка от Михалыча - Баннер 3">
         </div>
 
         <!-- ТЕКСТ ПОД 3 БАННЕРОМ И ВЫШЕ КНОПКИ -->
@@ -224,7 +241,7 @@
 
         <!-- КНОПКА ПОДАТЬ ЗАЯВКУ -->
         <div class="btn-container">
-            <a href="https://t.me/airoastingMichalych_bot" class="btn-submit">Подать заявку на прожарку</a>
+            <a href="#" class="btn-submit">Подать заявку на прожарку</a>
         </div>
 
     </div>
