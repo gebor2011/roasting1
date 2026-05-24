@@ -250,16 +250,7 @@
     </div>
 
     <!-- ПОДВАЛ И НАДЕЖНЫЙ СЧЁТЧИК ПОСЕТИТЕЛЕЙ -->
-    <footer>
-        <p>© 2026 Прожарка от Михалыча. Все права защищены. Твоя репутация дороже любой рефералки!</p>
-        
-        <!-- Текстовый счетчик -->
-        <div style="margin-top: 15px; font-size: 12px; color: #707a8a; opacity: 0.6;">
-            Просмотров страницы: <span id="visit-counter" style="color: #00c853; font-weight: bold;">...</span>
-        </div>
-    </footer>
-
-    <!-- Скрипт подсчета посетителей (работает без сторонних картинок) -->
+        <!-- Скрипт подсчета посетителей (работает без сторонних картинок) -->
     <script>
         function cb(response) {
             document.getElementById('visit-counter').innerText = response.value;
@@ -275,6 +266,5 @@
         };
         document.body.appendChild(script);
     </script>
-
 </body>
 </html>
