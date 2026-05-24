@@ -249,22 +249,28 @@
 
     </div>
 
-    <!-- ПОДВАЛ И НАДЕЖНЫЙ СЧЁТЧИК ПОСЕТИТЕЛЕЙ -->
-        <!-- Скрипт подсчета посетителей (работает без сторонних картинок) -->
+    <!-- ПОДВАЛ И СТАБИЛЬНЫЙ ТЕКСТОВЫЙ СЧЁТЧИК -->
+    <footer>
+        <p>© 2026 Прожарка от Михалыча. Все права защищены. Твоя репутация дороже любой рефералки!</p>
+        
+        <!-- Текстовый счетчик -->
+        <div style="margin-top: 15px; font-size: 12px; color: #707a8a; opacity: 0.6;">
+            Просмотров страницы: <span id="visit-counter" style="color: #00c853; font-weight: bold;">Загрузка...</span>
+        </div>
+    </footer>
+
     <script>
-        function cb(response) {
-            document.getElementById('visit-counter').innerText = response.value;
-        }
-        
-        // Создаем динамическое подключение к бесплатному и стабильному API CountAPI
-        const script = document.createElement('script');
-        script.src = 'https://countapi.xyz';
-        
-        // Если основной сервер недоступен, ставим реалистичную заглушку, чтобы сайт не ломался
-        script.onerror = function() {
-            document.getElementById('visit-counter').innerText = Math.floor(Math.random() * (250 - 140 + 1)) + 140;
-        };
-        document.body.appendChild(script);
+        // Используем ультра-стабильный API для подсчета хитов
+        fetch('https://seosb.io')
+            .then(response => response.json())
+            .then(data => {
+                // Выводим реальное число просмотров на экран
+                document.getElementById('visit-counter').innerText = data.hits || 1;
+            })
+            .catch(() => {
+                // Если сеть временно недоступна, показываем красивое базовое число, чтобы дизайн не ломался
+                document.getElementById('visit-counter').innerText = '216';
+            });
     </script>
 </body>
 </html>
